@@ -1,6 +1,7 @@
 import medgemma2 as M
 import csv
 import json
+import eval as e
 
 
 if __name__ == "__main__":
@@ -36,10 +37,4 @@ if __name__ == "__main__":
 
 
                    
-    model, processor = M.load_model()
-    report1 = M.generate_report(
-        model, processor, FRONTAL_IMAGE_PATH, LATERAL_IMAGE_PATH, INDICATION
-    )
-
-    print("\n=== Generated report ===")
-    #print(report1)
+    e.main()
