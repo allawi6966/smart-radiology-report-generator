@@ -1,0 +1,48 @@
+{
+  "findings": [
+    {
+      "id": "finding_1",
+      "finding_name": "Right Upper Lobe Opacity",
+      "location": "Right upper lobe",
+      "bounding_box": {
+        "x": 0.25,
+        "y": 0.35,
+        "width": 0.25,
+        "height": 0.25
+      },
+      "severity": "moderate",
+      "description": "There is increased opacity in the right upper lobe, potentially representing consolidation or other process.",
+      "confidence": 0.8
+    },
+    {
+      "id": "finding_2",
+      "finding_name": "Right Lower Lobe Opacity",
+      "location": "Right lower lobe",
+      "bounding_box": {
+        "x": 0.35,
+        "y": 0.45,
+        "width": 0.25,
+        "height": 0.25
+      },
+      "severity": "moderate",
+      "description": "There is increased opacity in the right lower lobe, potentially representing consolidation or other process.",
+      "confidence": 0.8
+    },
+    {
+      "id": "finding_3",
+      "finding_name": "Left Lower Lobe Opacity",
+      "location": "Left lower lobe",
+      "bounding_box": {
+        "x": 0.35,
+        "y": 0.55,
+        "width": 0.25,
+        "height": 0.25
+      },
+      "severity": "moderate",
+      "description": "There is increased opacity in the left lower lobe, potentially representing consolidation or other process.",
+      "confidence": 0.8
+    }
+  ],
+  "impression": "There are opacities in the right upper lobe, right lower lobe, and left lower lobe. Further evaluation is recommended.",
+  "abnormal": true
+}

@@ -44,3 +44,7 @@ update :
 }
 
 
+*** added grounded reports :
+now the reports show where the anomaly is and also the xray images will contain boxes as shown in 
+output/annotated.png
+
