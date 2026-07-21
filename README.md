@@ -47,4 +47,10 @@ update :
 *** added grounded reports :
 now the reports show where the anomaly is and also the xray images will contain boxes as shown in 
 output/annotated.png
+<img width="2500" height="2048" alt="annotated" src="https://github.com/user-attachments/assets/550f8575-7786-4d55-a472-365fcf26e35d" />
+
+***  added grounded verification :  check verification report in output directory , it also verifies the boxes on radiology images : (check verification_visualization.png )
+
+<img width="2500" height="2048" alt="verification_visualization" src="https://github.com/user-attachments/assets/0dd32506-465d-494a-89ec-8eb89a92363e" />
+
 
