@@ -1,0 +1,89 @@
+{
+  "impression": "There are opacities in the right upper lobe, right lower lobe, and left lower lobe. Further evaluation is recommended.",
+  "summary": {
+    "total_findings": 3,
+    "supported_findings": 3,
+    "kept_findings": 3,
+    "flagged_findings": 0,
+    "suppressed_findings": 0,
+    "abstained_findings": 0,
+    "hallucination_rate": 0.0
+  },
+  "findings": [
+    {
+      "finding_id": "finding_1",
+      "finding_name": "Right Upper Lobe Opacity",
+      "location": "Right upper lobe",
+      "status": "supported",
+      "evidence_score": 0.7155687808990479,
+      "model_confidence": 0.8,
+      "verifier_confidence": 0.9232443462718617,
+      "explanation": "Image evidence strongly supports Right Upper Lobe Opacity (score: 0.72)",
+      "matched_pathologies": [
+        [
+          "Pneumonia",
+          0.7155687808990479
+        ],
+        [
+          "Lung Opacity",
+          0.7129012942314148
+        ],
+        [
+          "Infiltration",
+          0.6403678059577942
+        ]
+      ],
+      "recommendation": "\u2713 INCLUDE: Finding is well-grounded in image"
+    },
+    {
+      "finding_id": "finding_2",
+      "finding_name": "Right Lower Lobe Opacity",
+      "location": "Right lower lobe",
+      "status": "supported",
+      "evidence_score": 0.6805374622344971,
+      "model_confidence": 0.8,
+      "verifier_confidence": 0.8913976929404518,
+      "explanation": "Image evidence strongly supports Right Lower Lobe Opacity (score: 0.68)",
+      "matched_pathologies": [
+        [
+          "Pneumonia",
+          0.6805374622344971
+        ],
+        [
+          "Lung Opacity",
+          0.6570529341697693
+        ],
+        [
+          "Effusion",
+          0.6508007645606995
+        ]
+      ],
+      "recommendation": "\u2713 INCLUDE: Finding is well-grounded in image"
+    },
+    {
+      "finding_id": "finding_3",
+      "finding_name": "Left Lower Lobe Opacity",
+      "location": "Left lower lobe",
+      "status": "supported",
+      "evidence_score": 0.6764193773269653,
+      "model_confidence": 0.8,
+      "verifier_confidence": 0.8876539793881502,
+      "explanation": "Image evidence strongly supports Left Lower Lobe Opacity (score: 0.68)",
+      "matched_pathologies": [
+        [
+          "Pneumonia",
+          0.6764193773269653
+        ],
+        [
+          "Effusion",
+          0.6514500975608826
+        ],
+        [
+          "Lung Opacity",
+          0.6499754786491394
+        ]
+      ],
+      "recommendation": "\u2713 INCLUDE: Finding is well-grounded in image"
+    }
+  ]
+}
