@@ -55,6 +55,11 @@ output/annotated.png
 
 
 *** Instructions before usage  ***
-just download the code and run the main file , make sure to enter the correct lateral and frontal xray images path .
+
+just download the code and run pip install -r requirements.txt , then run the main file , make sure to enter the correct lateral and frontal xray images path .
+
+
 Do this for now , until i create an gui .
+
+
 the report , report's verification and grounding boxes images will be saved in output/ . 

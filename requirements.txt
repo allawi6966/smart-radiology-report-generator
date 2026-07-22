@@ -1,0 +1,58 @@
+# =====================================================
+# Grounded Radiology Report Verification Pipeline
+# Requirements for medical imaging analysis
+# =====================================================
+
+# Core ML/DL frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.21.0
+
+# Vision-language models
+transformers>=4.50.0
+accelerate>=0.20.0
+huggingface_hub>=0.19.0
+bitsandbytes>=0.46.1
+
+# Specialized medical imaging
+torchxrayvision>=0.0.40
+
+# Image processing
+pillow>=9.0.0
+
+# JSON utilities
+json_repair>=0.20.0
+
+# Text evaluation metrics
+nltk>=3.8.0
+rouge-score>=0.1.2
+
+# Utilities
+python-dotenv>=0.19.0
+
+
+# =====================================================
+# Installation notes:
+# =====================================================
+# 1. Create a virtual environment:
+#    python -m venv venv
+#    source venv/bin/activate  (Linux/Mac)
+#    venv\Scripts\activate     (Windows)
+#
+# 2. Install requirements:
+#    pip install -r requirements.txt
+#
+# 3. MedGemma authentication (required):
+#    - Visit: https://huggingface.co/google/medgemma-4b-it
+#    - Accept the usage terms
+#    - Run: huggingface-cli login
+#    - Paste your HF token when prompted
+#
+# 4. GPU support (optional but recommended):
+#    - NVIDIA GPU: CUDA 11.8+ drivers
+#    - Test: python -c "import torch; print(torch.cuda.is_available())"
+#
+# 5. System dependencies (Linux):
+#    sudo apt-get install python3-dev libssl-dev
+#
+# =====================================================
