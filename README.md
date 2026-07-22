@@ -54,3 +54,6 @@ output/annotated.png
 <img width="2500" height="2048" alt="verification_visualization" src="https://github.com/user-attachments/assets/0dd32506-465d-494a-89ec-8eb89a92363e" />
 
 
+*** Instructions before usage  ***
+just download the code and run the main file , make sure to enter the correct lateral and frontal xray images path .
+Do this for now , until i create an gui .
