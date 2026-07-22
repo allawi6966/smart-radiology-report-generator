@@ -1,40 +1,47 @@
-import medgemma2 as M
-import csv
-import json
-import eval as e
-
-
+import os
+import medgemma2_grounded as m
+import test_harness as t
 if __name__ == "__main__":
-    DATA_PATH="data/images/images_normalized"
-    PROJECTIONS_PATH="data/indiana_projections.csv"
-    REAL_REPORST='data/indiana_reports.csv'
-    FRONTAL_IMAGE_PATH = "1.png"    # <-- change this to your frontal image
-    LATERAL_IMAGE_PATH = "2.png"    # <-- change this to your lateral image, or set to None
-    INDICATION = ""                 # <-- optional, e.g. "cough, rule out pneumonia"
-    FINAL_REPORSTS='final.csv'
-    y=[',']
-    model, processor = M.load_model()
-    with open(PROJECTIONS_PATH,'r') as p :
-        x=csv.DictReader(p)
-        for row in x :
-            if (y[0]==row['uid']):
-                y.append(DATA_PATH+'/'+row['filename'])
-                print(y)
-                report = M.generate_report(
-                    model, processor, y[1], y[2], INDICATION
-                )
+    while (True) :
 
-                print ("***new report created for uid : "+ y[0]+"\n")
-                print (report+'\n')
-                entry={'uid':y[0],'report':report}
-                with open ('final.json','a') as file :
-                    file.write(json.dumps(entry) + '\n')
-                    
-            else:
-                if (len(y)<3):
-                    print("one of the lateral or the frontal images is missing ! skipping to the next client ...")
-                y=[row['uid'],DATA_PATH+'/'+row['filename']]
+        frontal_path = input ("*** Insert the frontal xray image path ***")
+        if os.path.exists(frontal_path) : break
+        print ("pls enter a valid and correct frontal image path \n")
+    while (True) :
+    
+            lateral_path = input ("*** Insert the lateral xray image path ***")
+            if os.path.exists(lateral_path) : break
+            print ("pls enter a valid and correct lateral image path \n ")
+    output_dir = "output"
+    report_path = os.path.join(output_dir, "reports_grounded.json")
+    annotated_path = os.path.join(output_dir, "annotated.png")
+    os.makedirs(output_dir, exist_ok=True)
 
+    print("Loading model...")
+    model, processor = m.load_model()
 
-                   
-    e.main()
+    print(f"Generating grounded structured report for: {frontal_path}")
+    report = m.generate_structured_report(
+        model, processor,
+        frontal_path,
+        lateral_image_path=lateral_path,
+    )
+
+    if not m.validate_grounded(report):
+        print("⚠️  Missing bounding boxes on one or more findings — retrying once.")
+        report = m.generate_structured_report(
+            model, processor, frontal_path,
+            lateral_image_path=lateral_path,
+            max_new_tokens=1024,
+        )
+
+    report = m.clean_report(report)
+
+    m.print_structured_report(report)
+    m.save_report_json(report, report_path)
+
+    if report.get("findings"):
+        m.draw_bounding_boxes(frontal_path, report, annotated_path)
+    else:
+        print("No findings to draw.")
+    t.main()
